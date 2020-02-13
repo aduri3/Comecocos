@@ -1,9 +1,23 @@
 package tablero;
 
-public class Tablero {
+import avatares.Comecoco;
+import avatares.Fantasma;
+import comecocos.BolaEspecial;
+import comecocos.Bolas;
+import jugadores.Jugador;
 
+public class Tablero {
+	private Comecoco pacman;
+	private Fantasma[] fantasma;
+	private Bolas bolas;
+	private BolaEspecial bolaEsp;
+	private Jugador[] jugadores;
+	String[][] tablero = new String[26][27];
+	
 	public void creaTablero() {
-		String[][] tablero = new String[26][27];
+
+	
+		
 		for (int fil = 0; fil < tablero.length; fil++) {
 			for (int col = 0; col < tablero[fil].length; col++) {
 				tablero[fil][col] = " ";

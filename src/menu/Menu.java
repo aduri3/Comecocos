@@ -35,7 +35,11 @@ public class Menu {
 	}
 
 	public void menuOpciones() {
+		//Escaner para elegir una opción
 		Scanner opc = new Scanner(System.in);
+		//Escanner para elegir el numero de jugadores
+		Scanner jug = new Scanner(System.in);
+		int jugadores;
 		Tablero tab = new Tablero();
 		int opcion;
 		System.out.println("(1) Seleccionar jugadores[2-4].");
@@ -45,7 +49,15 @@ public class Menu {
 		opcion = opc.nextInt();
 		switch (opcion) {
 		case 1:
-			;
+			do {
+			System.out.println("¿Cuantos usuarios quereis jugar?");
+			System.out.println("(1) 2 Jugadores");
+			System.out.println("(2) 3 Jugadores");
+			System.out.println("(3) 4 Jugadores");
+			jugadores=jug.nextInt();
+			}while(jugadores<1 || jugadores >3);
+			
+			
 			break;
 		case 2:
 			tab.creaTablero();
