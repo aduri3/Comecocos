@@ -10,5 +10,6 @@ public class Cereza {
 	public Cereza(char cereza, int puntos) {
 		this.cereza=cereza;
 		this.puntCereza=puntos;
+		
 	}
 }
