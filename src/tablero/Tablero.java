@@ -2,14 +2,14 @@ package tablero;
 
 import avatares.Comecoco;
 import avatares.Fantasma;
-import comecocos.BolaEspecial;
-import comecocos.Bolas;
+import consumibles.BolaEspecial;
+import consumibles.Bola;
 import jugadores.Jugador;
 
 public class Tablero {
 	private Comecoco pacman;
 	private Fantasma[] fantasma;
-	private Bolas bolas;
+	private Bola bolas;
 	private BolaEspecial bolaEsp;
 	private Jugador[] jugadores;
 	String[][] tablero = new String[26][27];
