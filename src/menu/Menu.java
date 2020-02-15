@@ -58,8 +58,21 @@ public class Menu {
 		} while (!tecla.equalsIgnoreCase("j"));
 		menuOpciones();
 	}
+	/**
+	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del 1-3 para seleccionar una opcion,
+	 * selecciona el numero de jugadores y crea los jugadores que van a jugar
+	 * 
+	 * 
+	 * @param opc es el Scanner que recibira un numero para seleccionar una opcion
+	 * @param jug es el Scanner que recibira un numero para seleccionar el numero de jugadores
+	 * @param jugadores Almacena la variable de jug
+	 * @param corr Es una variable que servira para la validacion de los campos
+	 * @param tab Crea un nuevo tablero
+	 * @param opcion Almacena el valor de la variable opc
+	 * 
+	 */
 	public void menuOpciones() {
-		// Escaner para elegir una opci�n
+		// Escaner para elegir una opcion
 		Scanner opc = new Scanner(System.in);
 		// Escanner para elegir el numero de jugadores
 		Scanner jug = new Scanner(System.in);
@@ -67,7 +80,7 @@ public class Menu {
 		boolean corr = true;
 		Tablero tab = new Tablero();
 		int opcion = 0;
-		// Validación de opciones
+		// Validacion de opciones
 		do {
 			corr = true;
 			System.out.println("(1) Seleccionar jugadores[2-4].");
