@@ -3,35 +3,37 @@ package tablero;
 import avatares.Comecoco;
 import avatares.Fantasma;
 import consumibles.BolaEspecial;
+import consumibles.Cereza;
 import consumibles.Bola;
 import jugadores.Jugador;
 
 public class Tablero {
-	private Comecoco pacman;
-	private Fantasma[] fantasma;
-	private Bola bolas;
+	private int priPosLib=0;
+	private Cereza cer;
 	private BolaEspecial bolaEsp;
 	private Jugador[] jugadores;
-	String[][] tablero = new String[26][27];
+	private String[][] tablero;
+	
+	public Tablero(Jugador[] jugadores,int numJug, Cereza cer, BolaEspecial bolaEsp) {
+		this.jugadores=new Jugador[numJug];
+		this.tablero=new String[26][27];
+		
+	}
 	
 	public void creaTablero() {
 
 		for (int fil = 0; fil < tablero.length; fil++) {
 			for (int col = 0; col < tablero[fil].length; col++) {
-				tablero[fil][col] = "  ";
+				tablero[fil][col] = " ";
 			}
 
 		}
 		for (int i = 0; i < tablero.length; i++) {
-			tablero[0][i] = "__";
+			tablero[0][i] = "_";
 			tablero[i][0] = "|";
 			tablero[i][26] = "|";
-			tablero[25][i] = "__";
+			tablero[25][i] = "_";
 		}
-			for(int i=1;i<6;i++) {
-				tablero[i][(tablero.length/2)-1]="| ";
-				tablero[i][(tablero.length/2)+1]=" |";}
-		tablero[5][tablero.length/2]="__";
 	
 		
 		for (int fil = 0; fil < tablero.length; fil++) {
@@ -40,5 +42,11 @@ public class Tablero {
 			}
 			System.out.println();
 		}
+		
+
+	}
+	public void añadirJugador(Jugador j) {
+		this.jugadores[priPosLib]=j;
+		this.priPosLib++;
 	}
 }

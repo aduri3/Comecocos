@@ -4,7 +4,8 @@ package avatares;
 public class Fantasma {
 	private String fantasma;
 	private int puntFant;
-	
+	private int posX;
+	private int posY;
 //Metodo que crea un fantasma asignandole y le asigna un nombre
 //Y los punto que va a valer
 	public Fantasma(String fant, int puntos) {

@@ -69,7 +69,6 @@ public class Menu {
 	 * @param corr Es una variable que servira para la validacion de los campos
 	 * @param tab Crea un nuevo tablero
 	 * @param opcion Almacena el valor de la variable opc
-	 * 
 	 */
 	public void menuOpciones() {
 		// Escaner para elegir una opcion
@@ -78,7 +77,7 @@ public class Menu {
 		Scanner jug = new Scanner(System.in);
 		int jugadores = 0;
 		boolean corr = true;
-		Tablero tab = new Tablero();
+		Tablero tab = new Tablero(null, jugadores, null, null);
 		int opcion = 0;
 		// Validacion de opciones
 		do {
