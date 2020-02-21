@@ -16,7 +16,7 @@ public class Tablero {
 	
 	public Tablero(Jugador[] jugadores,int numJug, Cereza cer, BolaEspecial bolaEsp) {
 		this.jugadores=new Jugador[numJug];
-		this.tablero=new String[26][27];
+		this.tablero=new String[26][41];
 		
 	}
 	
@@ -31,7 +31,7 @@ public class Tablero {
 		for (int i = 0; i < tablero.length; i++) {
 			tablero[0][i] = "_";
 			tablero[i][0] = "|";
-			tablero[i][26] = "|";
+			tablero[i][40] = "|";
 			tablero[25][i] = "_";
 		}
 	
@@ -49,4 +49,6 @@ public class Tablero {
 		this.jugadores[priPosLib]=j;
 		this.priPosLib++;
 	}
+	
+	
 }
