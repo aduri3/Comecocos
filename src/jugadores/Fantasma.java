@@ -1,36 +1,22 @@
-package avatares;
+package jugadores;
 
 import java.util.Scanner;
 
 //Clase del Fantasma 
-public class Fantasma {
-	private String fantasma;
-	private int puntFant;
-	private int posX;
-	private int posY;
+public class Fantasma extends Jugador{
 
 //Metodo que crea un fantasma asignandole y le asigna un nombre
 //Y los punto que va a valer
-	public Fantasma(String fant, int puntos) {
-		this.fantasma = fant;
-		this.puntFant = puntos;
+	public Fantasma(String icono, String nombreJug) {
+		super(icono, nombreJug);
+		// TODO Auto-generated constructor stub
+		this.posX=12;
+		this.posY=13;
+		this.nMov=calculaNmov();
+		
 	}
-
-	// Método que hace el movimiento del fantasma
-	public void movFantasma(String pos) {		
-		switch (pos) {
-		case "a":
-			posX--;
-			break;
-		case "d":
-			posX++;
-			break;
-		case "w":
-			posY++;
-			break;
-		case "s":
-			posY--;
-			break;
-		}
+	private int calculaNmov() {
+		return (int) (Math.random()*4); 
 	}
+	
 }

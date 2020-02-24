@@ -10,6 +10,7 @@ import tablero.Tablero;
  * Contiene el menu de comecoco
  *
  * @version 1.0
+ * @author Dani Kuradchyk
  */
 public class Menu {
 	// Atributos
@@ -69,6 +70,7 @@ public class Menu {
 	 * @param corr Es una variable que servira para la validacion de los campos
 	 * @param tab Crea un nuevo tablero
 	 * @param opcion Almacena el valor de la variable opc
+	 * @param jugSel Te dice si se ha elegido al numero de jugadores o no
 	 */
 	public void menuOpciones() {
 		// Escaner para elegir una opcion
@@ -77,19 +79,21 @@ public class Menu {
 		Scanner jug = new Scanner(System.in);
 		int jugadores = 0;
 		boolean corr = true;
+		boolean jugSel=false;
 		Tablero tab = new Tablero(null, jugadores, null, null);
 		int opcion = 0;
+		
 		// Validacion de opciones
 		do {
 			corr = true;
 			System.out.println("(1) Seleccionar jugadores[2-4].");
-			System.out.println("(2) ¡Jugar!");
-			System.out.println("(3) ¿Como se juega?");
+			System.out.println("(2) Jugar!");
+			System.out.println("(3) Como se juega?");
 			System.out.println("(4) Salir");
 			try {
 				opcion = opc.nextInt();
 			} catch (InputMismatchException e) {
-				System.out.println("Introduce una opción valida (1-4)");
+				System.out.println("Introduce una opcion valida (1-4)");
 				corr = false;
 				opc = new Scanner(System.in);
 				System.out.println();
@@ -97,32 +101,37 @@ public class Menu {
 		} while ((opcion < 1 || opcion > 4) || !corr);
 		switch (opcion) {
 		case 1:
-			// Validación de de número de jugadores
+			// Validacion de de numero de jugadores
 			do {
 				corr = true;
-				System.out.println("¿Cuantos jugadores quereis jugar?");
+				System.out.println("�Cuantos jugadores quereis jugar?");
 				System.out.println("(1) 2 Jugadores");
 				System.out.println("(2) 3 Jugadores");
 				System.out.println("(3) 4 Jugadores");
 				try {
 					jugadores = jug.nextInt();
 				} catch (InputMismatchException e) {
-					System.out.println("Introduce una opción valida (1-3)");
+					System.out.println("Introduce una opcion valida (1-3)");
 					corr = false;
 					jug = new Scanner(System.in);
 					System.out.println();
 				}
 			} while ((jugadores < 1 || jugadores > 3) || !corr);
-
+			jugSel=true;
 			break;
 		case 2:
-			tab.creaTablero();
+		//	if(jugSel) {
+				
+				tab.imprimirTablero();
+				tab.jugar();
+		//	}else
+			//	System.out.println("No has introducido el numero de jugadores.");
 			break;
 		case 3:
-			;
+		//	Manual.muestra();
 			break;
 		case 4:
-			;
+			System.out.println("Has salido del Juego!");
 			break;
 
 		}

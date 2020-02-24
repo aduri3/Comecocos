@@ -2,11 +2,56 @@ package jugadores;
 //Clase jugador
 public class Jugador {
 	private String nombreJug;
-	private String rol;
+	private String icono;
+	protected int posX;
+	protected int posY;
+	protected int nMov;
 	
-	//Metodo que crea al jugador , le asigna el nombre y el rol
-	public Jugador(String nombre, String rol) {
-		this.nombreJug=nombre;
-		this.rol=rol;
+
+	// Metodo constructor que le asigna al comecoco un caracter
+	// que sera su forma
+	public Jugador(String icono,String nombreJug) {
+		this.icono=icono;
+		this.nombreJug=nombreJug;
 	}
+
+	public void mover(String pos) {
+		switch (pos) {
+		case "a":
+			this.posX--;
+			break;
+		case "d":
+			this.posX++;
+			break;
+		case "w":
+			this.posY--;
+			break;
+		case "s":
+			this.posY++;
+			break;
+		}
+	
+}
+
+	public String getIcono() {
+		return icono;
+	}
+
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+	
 }
