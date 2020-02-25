@@ -1,7 +1,14 @@
 package consumibles;
 //Clase Cereza
 public class Cereza extends Consumibles{
-	
+	/**
+	 * Clase consumibles
+	 *
+	 * Contiene todos los atributos de la Cereza incluidos los heredados
+	 *
+	 * @version 1.0
+	 * @author Alfonso Moreno
+	 */
 	private int puntCereza;
 	
 	public Cereza(String icono) {
