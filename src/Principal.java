@@ -6,6 +6,7 @@ public class Principal {
 		
 		Menu men= new Menu();
 		men.mostrar();
+		
 	}
-
+	
 }

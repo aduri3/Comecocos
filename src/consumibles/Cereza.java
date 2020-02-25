@@ -1,15 +1,16 @@
 package consumibles;
 //Clase Cereza
-public class Cereza {
-	private String cereza;
+public class Cereza extends Consumibles{
+	
 	private int puntCereza;
 	
-	
-//Metodo que asigna un caracter a la cereza
-//y los puntos que asignara al comecoco
-	public Cereza(String cereza, int puntos) {
-		this.cereza=cereza;
-		this.puntCereza=puntos;
-		
+	public Cereza(String icono) {
+		super(icono);
+		this.posX=12;
+		this.posY=13;
+		this.puntCereza=500;
 	}
+
+
+	
 }
