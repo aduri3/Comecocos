@@ -10,7 +10,13 @@ public class Cereza extends Consumibles{
 	 * @author Alfonso Moreno
 	 */
 	private int puntCereza;
-	
+	/**
+	 * Método Constructor de Cereza 
+	 * 
+	 * @param posX nos dice la posición x de la cereza
+	 * @param posY nos dice la posición x de la cereza
+	 * @param puntCereza nos dice la puntuación que da la Cereza
+	 **/
 	public Cereza(String icono) {
 		super(icono);
 		this.posX=12;
