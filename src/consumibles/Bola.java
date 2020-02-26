@@ -23,8 +23,6 @@ public class Bola extends Consumibles{
 		return icono;
 	}
 	
-//Metodo que asigna un caracter a una bola 
-//y los puntos que le suma al jugador
-	
+
 
 }
