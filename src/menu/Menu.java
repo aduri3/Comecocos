@@ -104,7 +104,7 @@ public class Menu {
 			// Validacion de de numero de jugadores
 			do {
 				corr = true;
-				System.out.println("¿Cuantos jugadores quereis jugar?");
+				System.out.println("Cuantos jugadores quereis jugar?");
 				System.out.println("(1) 2 Jugadores");
 				System.out.println("(2) 3 Jugadores");
 				System.out.println("(3) 4 Jugadores");
@@ -120,12 +120,7 @@ public class Menu {
 			jugSel=true;
 			break;
 		case 2:
-		//	if(jugSel) {
-				
-				tab.imprimirTablero();
-				tab.jugar();
-		//	}else
-			//	System.out.println("No has introducido el numero de jugadores.");
+			tab.jugar();
 			break;
 		case 3:
 		//	Manual.muestra();

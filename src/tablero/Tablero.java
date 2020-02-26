@@ -2,6 +2,9 @@ package tablero;
 
 import consumibles.BolaEspecial;
 import consumibles.Cereza;
+
+import java.util.Scanner;
+
 import consumibles.Bola;
 import jugadores.Comecoco;
 import jugadores.Fantasma;
@@ -10,17 +13,17 @@ import jugadores.Jugador;
 public class Tablero {
 	private int nJugadores;
 	private Cereza cer;
-	private BolaEspecial bolaEsp;
+	private Bola bola;
 	private Jugador[] jugadores;
-	private String[][] tablero;
+	private String[][] tablero =new String[16][16];
 
-	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, BolaEspecial bolaEsp) {
+	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, Bola bola) {
 		this.jugadores = new Jugador[1];
-		this.tablero = new String[26][26];
+		this.tablero = new String[16][16];
 		this.nJugadores = 0;
 
 	}
-
+	
 	public void imprimirTablero() {
 
 		for (int fil = 0; fil < tablero.length; fil++) {
@@ -35,16 +38,23 @@ public class Tablero {
 			}
 
 		}
+		
 		for (int i = 0; i < tablero.length; i++) {
-			tablero[25][i] = "X ";
+			tablero[15][i] = "X ";
 			tablero[i][0] = "X";
-			tablero[i][25] = "X";
+			tablero[i][15] = "X";
 			tablero[0][i] = "X ";
-//			tablero[25][i] = "__";
-//			tablero[i][0] = "|";
-//			tablero[i][25] = "|";
-//			tablero[0][i] = "__";
 
+
+		}
+		
+		for(int fil = 0; fil < tablero.length; fil++) {
+			for (int col = 0; col < tablero[fil].length; col++) {
+				if (tablero[fil][col] =="  ") {
+					tablero[fil][col] = bola.getIcon();
+			
+			}		
+		}
 		}
 		for (int fil = 0; fil < tablero.length; fil++) {
 			for (int col = 0; col < tablero[fil].length; col++) {
@@ -61,14 +71,19 @@ public class Tablero {
 	}
 
 	public void jugar() {
-		//Jugador comecoco = new Comecoco("O", "Dani");
-		this.jugadores[0] = new Comecoco("O ", "Dani");
+		this.jugadores[0] = new Comecoco("< ", "Dani");
 		this.imprimirTablero();
+		Scanner cur=new Scanner(System.in);
+		String cursor=null;
 		// Scanner leyendo el imput
-		System.out.println("Esperando input...");
-//		String mov = "input";
-		this.jugadores[0].mover("a");
-		this.imprimirTablero();
+		while(true) {
+			System.out.println("Introduce A,W,S,D para moverte");
+			cursor=cur.nextLine();
+	//		String mov = "input";
+			this.jugadores[0].mover(cursor);
+			this.imprimirTablero();
+			cur=new Scanner(System.in);
+		}
 	}
 
 }

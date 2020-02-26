@@ -1,5 +1,5 @@
-package jugadores;
-//Clase puntuación
+package tablero;
+//Clase puntuaciï¿½n
 public class Puntuacion {
 	protected static int puntTotal;
 	
