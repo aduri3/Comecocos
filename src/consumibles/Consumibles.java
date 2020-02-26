@@ -49,4 +49,10 @@ public class Consumibles {
 		this.posY = posY;
 		
 	}
+	/**
+	 * Método que  devuelve el icono
+	 **/
+	public String getIcon(String icono) {
+		return icono;
+	}
 }
