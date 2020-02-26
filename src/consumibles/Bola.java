@@ -13,16 +13,12 @@ public class Bola extends Consumibles{
 	 */
 	
 	
-	public Bola(int posX, int posY, String icono,int puntBol) {
+	public Bola(String icono) {
 		super(icono);
 		this.posX=10;
 		this.posY=10;
 		this.puntBol=10;
 	}
 	
-	
-
-	
-
 
 }

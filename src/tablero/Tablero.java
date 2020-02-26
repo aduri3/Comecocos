@@ -2,6 +2,7 @@ package tablero;
 
 import consumibles.BolaEspecial;
 import consumibles.Cereza;
+import consumibles.Consumibles;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ import jugadores.Jugador;
 public class Tablero {
 	private int nJugadores;
 	private Cereza cer;
-	private Bola bola;
+	private Consumibles bola=new Bola("·");
 	private Jugador[] jugadores;
 	private String[][] tablero =new String[16][16];
 
@@ -51,7 +52,7 @@ public class Tablero {
 		for(int fil = 0; fil < tablero.length; fil++) {
 			for (int col = 0; col < tablero[fil].length; col++) {
 				if (tablero[fil][col] =="  ") {
-					tablero[fil][col] = bola.getIcon();
+					tablero[fil][col] = this.bola.getIcon();
 			
 			}		
 		}
