@@ -43,9 +43,10 @@ public class Consumibles {
 		return posY;
 	}
 	/**
-	 * Método que asigna da la posición y del consumible
+	 * Método que  asigna da la posición y del consumible
 	 **/
 	public void setPosY(int posY) {
 		this.posY = posY;
+		
 	}
 }

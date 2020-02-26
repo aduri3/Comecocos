@@ -6,7 +6,7 @@ public class Bola extends Consumibles{
 	/**
 	 * Clase Bola
 	 *
-	 * Contiene todos los atributos de la bola incluidos los heredados de consumibles
+	 * Contiene todos  los atributos de la bola incluidos los heredados de consumibles
 	 *
 	 * @version 1.0
 	 * @author Alfonso Moreno
