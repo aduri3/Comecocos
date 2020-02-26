@@ -14,9 +14,10 @@ import jugadores.Jugador;
 public class Tablero {
 	private int nJugadores;
 	private Cereza cer;
-	private Consumibles bola=new Bola("·");
+	private Consumibles bola=new Bola("· ");
 	private Jugador[] jugadores;
 	private String[][] tablero =new String[16][16];
+	private String [][] posCom =new String[16][16];
 
 	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, Bola bola) {
 		this.jugadores = new Jugador[1];
@@ -36,6 +37,7 @@ public class Tablero {
 //					tablero[fil][col] = "  ";
 					tablero[fil][col] = "  ";
 				}
+				
 			}
 
 		}
@@ -51,7 +53,7 @@ public class Tablero {
 		
 		for(int fil = 0; fil < tablero.length; fil++) {
 			for (int col = 0; col < tablero[fil].length; col++) {
-				if (tablero[fil][col] =="  ") {
+				if (tablero[fil][col].equals("  ")) {
 					tablero[fil][col] = this.bola.getIcon();
 			
 			}		
