@@ -19,9 +19,9 @@ public class Bola extends Consumibles{
 		this.posY=10;
 		this.puntBol=10;
 	}
-	public String getIcon(String icono) {
-		return icono;
-	}
+	
+	
+
 	
 
 
