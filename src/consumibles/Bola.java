@@ -12,5 +12,7 @@ public class Bola {
 		this.bola=bola;
 		this.puntBol=puntBol;
 	}
-
+	public String getIcon() {
+		return bola;
+	}
 }
