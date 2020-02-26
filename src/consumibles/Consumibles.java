@@ -52,7 +52,7 @@ public class Consumibles {
 	/**
 	 * Método que  devuelve el icono
 	 **/
-	public String getIcon(String icono) {
+	public String getIcon() {
 		return icono;
 	}
 }
