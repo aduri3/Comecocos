@@ -20,5 +20,6 @@ public class Bola extends Consumibles{
 		this.puntBol=10;
 	}
 	
+	
 
 }

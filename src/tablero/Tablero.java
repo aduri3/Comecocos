@@ -88,5 +88,6 @@ public class Tablero {
 			cur=new Scanner(System.in);
 		}
 	}
+	
 
 }
