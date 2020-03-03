@@ -129,6 +129,7 @@ public class Menu {
 				}
 			} while ((jugadores < 1 || jugadores > 3) || !corr);
 			jugSel = true;
+			
 			// Introducir nombre del jugador
 			int elc;
 			elc = per.nextInt();

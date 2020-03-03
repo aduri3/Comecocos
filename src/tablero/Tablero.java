@@ -10,22 +10,58 @@ import consumibles.Bola;
 import jugadores.Comecoco;
 import jugadores.Fantasma;
 import jugadores.Jugador;
-
+import menu.MenuJugador;
+/**
+ * Clase Tablero
+ *
+ * Contiene el menu de comecoco
+ *
+ * @version 1.0
+ * @author Dani Kuradchyk
+ */
 public class Tablero {
+	/**
+	 * Numero de jugadores
+	 **/
 	private int nJugadores;
-	private Cereza cer;
+	/**
+	 * Valor de cereza
+	 **/
+	private Consumibles cer=new Cereza("& ");;
+	/**
+	 * Valor de bola
+	 **/
 	private Consumibles bola=new Bola("· ");
+	/**
+	 * Valor de menu
+	 **/
 	private Jugador[] jugadores;
+	/**
+	 * Valor de menu
+	 **/
 	private String[][] tablero =new String[16][16];
-	private String [][] posCom =new String[16][16];
 
+	/**
+	 * Metodo constructor que inicializa el menu
+	 * 
+	 * @param Valor de menu
+	 * @param Valor de menu
+	 * @param Valor de menu
+	 */
 	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, Bola bola) {
 		this.jugadores = new Jugador[1];
 		this.tablero = new String[16][16];
 		this.nJugadores = 0;
 
 	}
-	
+	/**
+	 * Metodo que muestra el menu por pantalla y recibe una tecla
+	 * 
+	 * @param tec    es el Scanner que recibira una j para empezar
+	 * @param logo   Contiene el texto de PACMAN
+	 * @param dibujo Contiene un dibujo en ASCI
+	 * @param tecla  Almacena la tecla pulsada
+	 */
 	public void imprimirTablero() {
 
 		for (int fil = 0; fil < tablero.length; fil++) {
@@ -34,7 +70,6 @@ public class Tablero {
 						this.jugadores[0].getPosY() == fil) {
 					tablero[fil][col] = this.jugadores[0].getIcono();
 				} else {
-//					tablero[fil][col] = "  ";
 					tablero[fil][col] = "  ";
 				}
 				
@@ -47,7 +82,6 @@ public class Tablero {
 			tablero[i][0] = "X";
 			tablero[i][15] = "X";
 			tablero[0][i] = "X ";
-
 
 		}
 		
@@ -80,7 +114,8 @@ public class Tablero {
 		String cursor=null;
 		// Scanner leyendo el imput
 		while(true) {
-			System.out.println("Introduce A,W,S,D para moverte");
+			MenuJugador men=new MenuJugador();
+			System.out.println(men.getInterfazMovimientos());
 			cursor=cur.nextLine();
 	//		String mov = "input";
 			this.jugadores[0].mover(cursor);
