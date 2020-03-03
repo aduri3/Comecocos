@@ -42,7 +42,7 @@ public class Jugador {
 		switch (pos) {
 		case "a":
 			this.posX--;
-			setIcon("> ");
+			setIcon("> ");  
 			break;
 		case "d":
 			this.posX++;
