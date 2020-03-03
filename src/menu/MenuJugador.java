@@ -6,20 +6,14 @@ public class MenuJugador {
 	/**
 	 * Método que devuelve la interfaz de los posibles movimientos del jugador
 	 * 
-	 * @return 
-	 *		<ul>
-	 *			<li>W - Arriba</li>
-	 *			<li>A - Izquierda</li>
-	 *			<li>S - Abajo</li>
-	 *			<li>D - Derecha</li>
-	 *		</ul>
 	 */
 	public String getInterfazMovimientos() {
-		return "-------  -------  -------  -------\n"
-				+ "|     |  |     |  |     |  |     |\n"
-				+ "|  A  |  |  W  |  |  S  |  |  D  |\n"
-				+ "|     |  |     |  |     |  |     |\n"
-				+ "-------  -------  -------  -------\n";
+		return "       -----\n"
+				+"       | W |\n"
+				+"       -----\n"
+				+ "-----  -----  -----\n"
+				+ "| A |  | S |  | D |\n"
+				+ "-----  -----  -----\n";
 	}
 	
 	
