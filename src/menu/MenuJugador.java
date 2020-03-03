@@ -15,11 +15,13 @@ public class MenuJugador {
 	 *		</ul>
 	 */
 	public String getInterfazMovimientos() {
-		return "Mueva con las teclas:\n" + 
-				"W - Arriba\n" + 
-				"A - Izquierda\n" + 
-				"S - Abajo\n" + 
-				"D - Derecha";
+		return "-------  -------  -------  -------\n"
+				+ "|     |  |     |  |     |  |     |\n"
+				+ "|  A  |  |  W  |  |  S  |  |  D  |\n"
+				+ "|     |  |     |  |     |  |     |\n"
+				+ "-------  -------  -------  -------\n";
 	}
+	
+	
 	
 }
