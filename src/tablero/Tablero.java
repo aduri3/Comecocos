@@ -14,7 +14,7 @@ import jugadores.Jugador;
 public class Tablero {
 	private int nJugadores;
 	private Cereza cer;
-	private Consumibles bola=new Bola("·");
+	private Consumibles bola=new Bola("· ");
 	private Jugador[] jugadores;
 	private String[][] tablero =new String[16][16];
 
@@ -86,5 +86,6 @@ public class Tablero {
 			cur=new Scanner(System.in);
 		}
 	}
+	
 
 }
