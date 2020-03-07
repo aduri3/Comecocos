@@ -17,18 +17,15 @@ import tablero.Tablero;
 public class Menu {
 	// Atributos
 
-	/**
-	 * Valor de menu
-	 **/
-	private String menu;
 
+
+	private static int maxJug=1;
 	/**
 	 * Metodo constructor que inicializa el menu
 	 * 
 	 * @param Valor de menu
 	 */
 	public Menu() {
-		this.menu = "";
 	}
 
 	/**
@@ -62,7 +59,9 @@ public class Menu {
 		} while (!tecla.equalsIgnoreCase("j"));
 		menuOpciones();
 	}
-
+	public static int getMaxJug() {
+		return maxJug;
+	}
 	/**
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
 	 * 1-3 para seleccionar una opcion, selecciona el numero de jugadores y crea los
@@ -79,21 +78,14 @@ public class Menu {
 	 * @param opcion    Almacena el valor de la variable opc
 	 * @param jugSel    Te dice si se ha elegido al numero de jugadores o no
 	 */
-	public void menuOpciones() {
+	private void menuOpciones() {
 		// Escaner para elegir una opcion
 		Scanner opc = new Scanner(System.in);
-		// Escanner para elegir el numero de jugadores
-		Scanner jug = new Scanner(System.in);
 		int jugadores = 0;
 		boolean corr = true;
 		boolean jugSel = false;
 		Tablero tab = new Tablero(null, jugadores, null, null);
 		int opcion = 0;
-		// Escaner para introducir nombre
-		Scanner nom = new Scanner(System.in);
-		// Escaner para la elección de personaje
-		Scanner per = new Scanner(System.in);
-
 		// Validacion de opciones
 		do {
 			corr = true;
@@ -112,40 +104,7 @@ public class Menu {
 		} while ((opcion < 1 || opcion > 4) || !corr);
 		switch (opcion) {
 		case 1:
-			// Validacion de de numero de jugadores
-			do {
-				corr = true;
-				System.out.println("Cuantos jugadores quereis jugar?");
-				System.out.println("(1) 2 Jugadores");
-				System.out.println("(2) 3 Jugadores");
-				System.out.println("(3) 4 Jugadores");
-				try {
-					jugadores = jug.nextInt();
-				} catch (InputMismatchException e) {
-					System.out.println("Introduce una opcion valida (1-3)");
-					corr = false;
-					jug = new Scanner(System.in);
-					System.out.println();
-				}
-			} while ((jugadores < 1 || jugadores > 3) || !corr);
-			jugSel = true;
-			
-			// Introducir nombre del jugador
-			int elc;
-			elc = per.nextInt();
-			System.out.println("Elija (1)Comecocos o (2)Fantasma");
-
-			switch (elc) {
-			case 1:
-				String nombre = null;
-				System.out.println("Introduzca su nombre: ");
-				nombre = nom.nextLine();
-				Jugador jugador1 = new Jugador("Comecocos", nombre);
-				break;
-			case 2:
-				Jugador jugador2 = new Jugador("Comecocos", "");
-			}
-
+			menuImplementarJugadores();
 			break;
 		case 2:
 			tab.jugar();
@@ -158,5 +117,9 @@ public class Menu {
 			break;
 
 		}
+		
+	}
+	private void menuImplementarJugadores() {
+		
 	}
 }

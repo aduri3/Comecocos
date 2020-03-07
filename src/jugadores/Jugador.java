@@ -35,7 +35,7 @@ public class Jugador {
 		this.nombreJug=nombreJug;
 	}
 	/**
-	 * Metodo que contiene la lógica de movimiento de los jugadores
+	 * Metodo que contiene la logica de movimiento de los jugadores
 	 * 
 	 */
 	public void mover(String pos) {
