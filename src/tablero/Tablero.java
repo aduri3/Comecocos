@@ -82,7 +82,9 @@ public class Tablero {
 			tablero[i][0] = "X";
 			tablero[i][15] = "X";
 			tablero[0][i] = "X ";
-
+			tablero[3][1] = "X";
+			tablero[4][2] = "X";
+			tablero[5][1] = "X";
 		}
 		
 		for(int fil = 0; fil < tablero.length; fil++) {
