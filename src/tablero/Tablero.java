@@ -67,7 +67,7 @@ public class Tablero {
 	 */
 	public void imprimirTablero() {
 		inicializarTablero();
-		insertarComecocos();
+		insertarComecocos(); 
 		insertarParedes();
 		insertarBolas();
 

@@ -79,7 +79,7 @@ public class Menu {
 	 * @param jugSel    Te dice si se ha elegido al numero de jugadores o no
 	 */
 	private void menuOpciones() {
-		// Escaner para elegir una opcion
+		// Escaner para elegir una opcion 
 		Scanner opc = new Scanner(System.in);
 		int jugadores = 0;
 		boolean corr = true;
