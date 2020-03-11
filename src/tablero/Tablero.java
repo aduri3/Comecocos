@@ -33,7 +33,7 @@ public class Tablero {
 	/**
 	 * Valor de bola
 	 **/
-	private Consumibles bola = new Bola("· ");
+	private Consumibles bola = new Bola("ï¿½ ");
 	/**
 	 * Valor de menu
 	 **/
@@ -135,6 +135,7 @@ public class Tablero {
 			MenuJugador men = new MenuJugador();
 			System.out.println(men.getInterfazMovimientos());
 			cursor = cur.nextLine();
+			
 			// String mov = "input";
 			this.jugadores[0].mover(cursor);
 			this.imprimirTablero();
