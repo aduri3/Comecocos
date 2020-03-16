@@ -2,7 +2,7 @@ package menu;
 
 public class MenuJugador {
 
-	// Método que da la interfaz de los movimientos
+	// Metodo que da la interfaz de los movimientos
 	/**
 	 * Clase MenuJugador
 	 * 
@@ -14,7 +14,7 @@ public class MenuJugador {
 	 */
 	
 	/**
-	 * Método que devuelve la interfaz de los posibles movimientos del jugador
+	 * Metodo que devuelve la interfaz de los posibles movimientos del jugador
 	 * 
 	 * @return " -----\n" +" | W |\n" +" -----\n" + "----- ----- -----\n" + "| A | |
 	 *         S | | D |\n" + "----- ----- -----\n"
