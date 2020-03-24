@@ -20,7 +20,7 @@ public class Principal {
 		// Validacion de opciones
 		do {
 			corr = true;
-			men.menuOpciones();
+			System.out.println(men.menuOpciones());
 			try {
 				opcion = opc.nextInt();
 			} catch (InputMismatchException e) {

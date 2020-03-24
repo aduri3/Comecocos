@@ -60,21 +60,21 @@ public class Menu {
 	/**
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
 	 * 1-4 para seleccionar una opcion.
+	 * 
+	 * @return
 	 */
-	public void menuOpciones() {
-			System.out.println("(1) Seleccionar jugadores[2-4].");
-			System.out.println("(2) Jugar!");
-			System.out.println("(3) Como se juega?");
-			System.out.println("(4) Salir");	
+	public String menuOpciones() {
+		return "(1) Seleccionar jugadores[2-4].\n" + "(2) Jugar!\n" + "(3) Como se juega?\n" + "(4) Salir";
+
 	}
+
 	/**
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
-	 * 1-3 para selecciona el numero de jugadores y crea los
-	 * jugadores que van a jugar
+	 * 1-3 para selecciona el numero de jugadores y crea los jugadores que van a
+	 * jugar
 	 */
-	public void menuImplementarJugadores() {
-			System.out.println("(1) 2 Jugadores");
-			System.out.println("(2) 3 Jugadores");
-			System.out.println("(3) 4 Jugadores");
+	public String menuImplementarJugadores() {
+		return "(1) 2 Jugadores\n" + "(2) 3 Jugadores\n" + "(3) 4 Jugadores";
+	
 	}
 }
