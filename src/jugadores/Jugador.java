@@ -14,6 +14,7 @@ public class Jugador {
 	 * @param nMov Es el numero de movimientos que puede hacer el jugador
 	 * 
 	 * @author Alfonso Moreno
+	 * @author Dani Kuradchyk
 	 * 
 	 */
 	private String nombreJug;
@@ -59,35 +60,52 @@ public class Jugador {
 		}
 	
 }
-	
+	/**
+	 * Metodo que obtiene el icono del jugador
+	 * 
+	 */
 	public String getIcono() {
 		return icono;
 	}
-
+	/**
+	 * Metodo que pasa por parametros el icono del jugador
+	 * 
+	 */
 	public void setIcon(String icono) {
 		this.icono = icono;
 	}
-
-	public void setIcono(String icono) {
-		this.icono = icono;
-	}
-
+	/**
+	 * Metodo que cambia la posicion x
+	 * 
+	 */
 	public void setPosX(int posX) {
 		this.posX = posX;
 	}
-
+	/**
+	 * Metodo que cambia la posicion y
+	 * 
+	 */
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
-
+	/**
+	 * Metodo que cambia el numero de movimientos
+	 * 
+	 */
 	public void setnMov(int nMov) {
 		this.nMov = nMov;
 	}
-
+	/**
+	 * Metodo que obtiene la posicion x
+	 * 
+	 */
 	public int getPosX() {
 		return posX;
 	}
-
+	/**
+	 * Metodo que obtiene la posicion y
+	 * 
+	 */
 	public int getPosY() {
 		return posY;
 	}

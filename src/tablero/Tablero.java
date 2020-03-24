@@ -33,7 +33,7 @@ public class Tablero {
 	/**
 	 * Valor de bola
 	 **/
-	private Consumibles bola = new Bola("ï¿½ ");
+	private Consumibles bola = new Bola("· ");
 	/**
 	 * Valor de menu
 	 **/
@@ -51,7 +51,7 @@ public class Tablero {
 	 * @param Valor de menu
 	 */
 	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, Bola bola) {
-		this.jugadores = new Jugador[Menu.getMaxJug()];
+		this.jugadores = new Jugador[1];
 		this.tablero = new String[16][16];
 		this.nJugadores = 0;
 

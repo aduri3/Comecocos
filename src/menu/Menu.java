@@ -17,9 +17,6 @@ import tablero.Tablero;
 public class Menu {
 	// Atributos
 
-
-
-	private static int maxJug=1;
 	/**
 	 * Metodo constructor que inicializa el menu
 	 * 
@@ -59,67 +56,25 @@ public class Menu {
 		} while (!tecla.equalsIgnoreCase("j"));
 		menuOpciones();
 	}
-	public static int getMaxJug() {
-		return maxJug;
-	}
+
 	/**
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
-	 * 1-3 para seleccionar una opcion, selecciona el numero de jugadores y crea los
-	 * jugadores que van a jugar
-	 * 
-	 * 
-	 * @param opc       es el Scanner que recibira un numero para seleccionar una
-	 *                  opcion
-	 * @param jug       es el Scanner que recibira un numero para seleccionar el
-	 *                  numero de jugadores
-	 * @param jugadores Almacena la variable de jug
-	 * @param corr      Es una variable que servira para la validacion de los campos
-	 * @param tab       Crea un nuevo tablero
-	 * @param opcion    Almacena el valor de la variable opc
-	 * @param jugSel    Te dice si se ha elegido al numero de jugadores o no
+	 * 1-4 para seleccionar una opcion.
 	 */
-	private void menuOpciones() {
-		// Escaner para elegir una opcion 
-		Scanner opc = new Scanner(System.in);
-		int jugadores = 0;
-		boolean corr = true;
-		boolean jugSel = false;
-		Tablero tab = new Tablero(null, jugadores, null, null);
-		int opcion = 0;
-		// Validacion de opciones
-		do {
-			corr = true;
+	public void menuOpciones() {
 			System.out.println("(1) Seleccionar jugadores[2-4].");
 			System.out.println("(2) Jugar!");
 			System.out.println("(3) Como se juega?");
-			System.out.println("(4) Salir");
-			try {
-				opcion = opc.nextInt();
-			} catch (InputMismatchException e) {
-				System.out.println("Introduce una opcion valida (1-4)");
-				corr = false;
-				opc = new Scanner(System.in);
-				System.out.println();
-			}
-		} while ((opcion < 1 || opcion > 4) || !corr);
-		switch (opcion) {
-		case 1:
-			menuImplementarJugadores();
-			break;
-		case 2:
-			tab.jugar();
-			break;
-		case 3:
-			// Manual.muestra();
-			break;
-		case 4:
-			System.out.println("Has salido del Juego!");
-			break;
-
-		}
-		
+			System.out.println("(4) Salir");	
 	}
-	private void menuImplementarJugadores() {
-		
+	/**
+	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
+	 * 1-3 para selecciona el numero de jugadores y crea los
+	 * jugadores que van a jugar
+	 */
+	public void menuImplementarJugadores() {
+			System.out.println("(1) 2 Jugadores");
+			System.out.println("(2) 3 Jugadores");
+			System.out.println("(3) 4 Jugadores");
 	}
 }
