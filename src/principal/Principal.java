@@ -1,3 +1,4 @@
+package principal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -43,7 +44,7 @@ public class Principal {
 		case 4:
 			System.out.println("Has salido del Juego!");
 			break;
-
+ 
 		}
 
 	}
