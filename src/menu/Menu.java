@@ -1,13 +1,11 @@
 package menu;
 
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
-import jugadores.Jugador;
-import tablero.Tablero;
 
 /**
- * Clase Menu
+ * Clase Menu 
  *
  * Contiene el menu de comecoco
  *
@@ -15,25 +13,11 @@ import tablero.Tablero;
  * @author Dani Kuradchyk
  */
 public class Menu {
-	// Atributos
-
-	/**
-	 * Metodo constructor que inicializa el menu
-	 * 
-	 * @param Valor de menu
-	 */
-	public Menu() {
-	}
 
 	/**
 	 * Metodo que muestra el menu por pantalla y recibe una tecla
 	 * 
-	 * @param tec    es el Scanner que recibira una j para empezar
-	 * @param logo   Contiene el texto de PACMAN
-	 * @param dibujo Contiene un dibujo en ASCI
-	 * @param tecla  Almacena la tecla pulsada
 	 */
-
 	public void mostrar() {
 		Scanner tec = new Scanner(System.in);
 		String logo = "       _ __   __ _  ___ _ __ ___   __ _ _ __  \n"
@@ -60,8 +44,13 @@ public class Menu {
 	/**
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
 	 * 1-4 para seleccionar una opcion.
-	 * 
-	 * @return
+	 *  @return
+	 *         <ul>
+	 *         <li>(1) Seleccionar jugadores[2-4].</li>
+	 *         <li>(2) Jugar!</li>
+	 *         <li>(3) Como se juega?</li>
+	 *         <li>(4) Salir</li>
+	 *         </ul>
 	 */
 	public String menuOpciones() {
 		return "(1) Seleccionar jugadores[2-4].\n" + "(2) Jugar!\n" + "(3) Como se juega?\n" + "(4) Salir";
@@ -72,6 +61,12 @@ public class Menu {
 	 * Metodo que muestra el menu de opciones por pantalla y recibe un numero del
 	 * 1-3 para selecciona el numero de jugadores y crea los jugadores que van a
 	 * jugar
+	 *  @return
+	 *         <ul>
+	 *         <li>(1) 2 Jugadores</li>
+	 *         <li>(2) 3 Jugadores</li>
+	 *         <li>(3) 4 Jugadores</li>
+	 *         </ul>
 	 */
 	public String menuImplementarJugadores() {
 		return "(1) 2 Jugadores\n" + "(2) 3 Jugadores\n" + "(3) 4 Jugadores";
