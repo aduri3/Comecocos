@@ -14,7 +14,7 @@ import menu.MenuJugador;
 /**
  * Clase Tablero
  *
- * Contiene el menu de comecoco
+ * Contiene el tablero del juego y sus metodos
  *
  * @version 1.0
  * @author Dani Kuradchyk
@@ -98,6 +98,7 @@ public class Tablero {
 			tab[i][0] = "X";
 			tab[i][15] = "X";
 			tab[0][i] = "X ";
+			
 
 		}
 	}
