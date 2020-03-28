@@ -1,6 +1,6 @@
 package tablero;
 
-import consumibles.BolaEspecial;
+
 import consumibles.Cereza;
 import consumibles.Consumibles;
 
@@ -8,9 +8,7 @@ import java.util.Scanner;
 
 import consumibles.Bola;
 import jugadores.Comecoco;
-import jugadores.Fantasma;
 import jugadores.Jugador;
-import menu.Menu;
 import menu.MenuJugador;
 
 /**
@@ -29,7 +27,7 @@ public class Tablero {
 	/**
 	 * Valor de cereza
 	 **/
-	private Consumibles cer = new Cereza("& ");;
+	private Consumibles cer = new Cereza("& ");
 	/**
 	 * Valor de bola
 	 **/
@@ -41,106 +39,130 @@ public class Tablero {
 	/**
 	 * Valor de menu
 	 **/
-	private String[][] tablero = new String[16][16];
+	private String[][] tab = new String[16][16];
 
 	/**
 	 * Metodo constructor que inicializa el menu
 	 * 
-	 * @param Valor de menu
-	 * @param Valor de menu
-	 * @param Valor de menu
+	 * @param jugadores los jugadores que habra en el juego
+	 * @param numJug    numero de jugadores
+	 * @param cer       una cereza
+	 * @param bola      la bola
 	 */
 	public Tablero(Jugador[] jugadores, int numJug, Cereza cer, Bola bola) {
 		this.jugadores = new Jugador[1];
-		this.tablero = new String[16][16];
+		this.tab = new String[16][16];
 		this.nJugadores = 0;
 
 	}
 
 	/**
-	 * Metodo que muestra el menu por pantalla y recibe una tecla
+	 * Metodo que imprime el tablero por pantalla
 	 * 
-	 * @param tec    es el Scanner que recibira una j para empezar
-	 * @param logo   Contiene el texto de PACMAN
-	 * @param dibujo Contiene un dibujo en ASCI
-	 * @param tecla  Almacena la tecla pulsada
 	 */
 	public void imprimirTablero() {
 		inicializarTablero();
-		insertarComecocos(); 
-		insertarParedes(); 
+		insertarComecocos();
+		insertarParedes();
 		insertarBolas();
 
-		for (int fil = 0; fil < tablero.length; fil++) {
-			for (int col = 0; col < tablero[fil].length; col++) {
-				System.out.print(tablero[fil][col]);
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
+				System.out.print(tab[fil][col]);
 			}
 			System.out.println();
 		}
 
 	}
+
+	/**
+	 * Metodo que inicializa la matriz a campos vacios
+	 * 
+	 */
 	private void inicializarTablero() {
-		for (int fil = 0; fil < tablero.length; fil++) {
-			for (int col = 0; col < tablero[fil].length; col++) {
-				tablero[fil][col]="  ";
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
+				tab[fil][col] = "  ";
 			}
-			
-		}
-	}
-	private void insertarParedes() {
-		for (int i = 0; i < tablero.length; i++) {
-			tablero[15][i] = "X ";
-			tablero[i][0] = "X";
-			tablero[i][15] = "X";
-			tablero[0][i] = "X ";
 
 		}
 	}
+
+	/**
+	 * Metodo que pinta las paredes del tablero
+	 * 
+	 */
+	private void insertarParedes() {
+		for (int i = 0; i < tab.length; i++) {
+			tab[15][i] = "X ";
+			tab[i][0] = "X";
+			tab[i][15] = "X";
+			tab[0][i] = "X ";
+
+		}
+	}
+
+	/**
+	 * Metodo que inserta el comecocos dentro del tablero
+	 * 
+	 */
 	private void insertarComecocos() {
-		for (int fil = 0; fil < tablero.length; fil++) {
-			for (int col = 0; col < tablero[fil].length; col++) {
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
 				if (this.jugadores[0] != null && this.jugadores[0].getPosX() == col
 						&& this.jugadores[0].getPosY() == fil) {
-					if(tablero[fil][col]=="X" || tablero[fil][col]=="X ")	
+					if (tab[fil][col].equals("X") || tab[fil][col].equals("X "))
 						System.out.println("Te has salido del tablero");
 					else
-						tablero[fil][col] = this.jugadores[0].getIcono();
+						tab[fil][col] = this.jugadores[0].getIcono();
 
 				}
 			}
 		}
 	}
 
-	
-
+	/**
+	 * Metodo que inserta las bolas dentro del tablero
+	 * 
+	 */
 	private void insertarBolas() {
-		for (int fil = 0; fil < tablero.length; fil++) {
-			for (int col = 0; col < tablero[fil].length; col++) {
-				if (tablero[fil][col].equals("  ")) {
-					tablero[fil][col] = this.bola.getIcon();
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
+				if (tab[fil][col].equals("  ")) {
+					tab[fil][col] = this.bola.getIcon();
 
 				}
 			}
 		}
 	}
 
+	/**
+	 * Metodo que inserta a los jugadores dentro del array de jugadores del tablero
+	 * 
+	 * @param j jugador a añadir en el tablero
+	 * 
+	 */
 	public void anadirJugador(Jugador j) {
 		this.jugadores[nJugadores] = j;
 		this.nJugadores++;
 	}
 
+	/**
+	 * Metodo que va pidiendo al jugador la posicion a la que se quiere mover hasta que el 
+	 * jugador introduzca salir por consola.
+	 */
 	public void jugar() {
 		this.jugadores[0] = new Comecoco("< ", "Dani");
 		this.imprimirTablero();
 		Scanner cur = new Scanner(System.in);
 		String cursor = null;
-		// Scanner leyendo el imput
-		while (true) {
+		boolean salir = false;
+		while (!salir) {
 			MenuJugador men = new MenuJugador();
 			System.out.println(men.getInterfazMovimientos());
 			cursor = cur.nextLine();
-			
-			// String mov = "input";
+			if (cursor.equalsIgnoreCase("salir"))
+				salir = true;
 			this.jugadores[0].mover(cursor);
 			this.imprimirTablero();
 			cur = new Scanner(System.in);
