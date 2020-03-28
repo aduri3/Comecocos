@@ -68,7 +68,7 @@ public class Tablero {
 	public void imprimirTablero() {
 		inicializarTablero();
 		insertarComecocos(); 
-		insertarParedes();
+		insertarParedes(); 
 		insertarBolas();
 
 		for (int fil = 0; fil < tablero.length; fil++) {
@@ -87,18 +87,6 @@ public class Tablero {
 			
 		}
 	}
-	private void insertarComecocos() {
-		for (int fil = 0; fil < tablero.length; fil++) {
-			for (int col = 0; col < tablero[fil].length; col++) {
-				if (this.jugadores[0] != null && this.jugadores[0].getPosX() == col
-						&& this.jugadores[0].getPosY() == fil) {
-					tablero[fil][col] = this.jugadores[0].getIcono();
-
-				}
-			}
-		}
-	}
-
 	private void insertarParedes() {
 		for (int i = 0; i < tablero.length; i++) {
 			tablero[15][i] = "X ";
@@ -108,6 +96,22 @@ public class Tablero {
 
 		}
 	}
+	private void insertarComecocos() {
+		for (int fil = 0; fil < tablero.length; fil++) {
+			for (int col = 0; col < tablero[fil].length; col++) {
+				if (this.jugadores[0] != null && this.jugadores[0].getPosX() == col
+						&& this.jugadores[0].getPosY() == fil) {
+					if(tablero[fil][col]=="X" || tablero[fil][col]=="X ")	
+						System.out.println("Te has salido del tablero");
+					else
+						tablero[fil][col] = this.jugadores[0].getIcono();
+
+				}
+			}
+		}
+	}
+
+	
 
 	private void insertarBolas() {
 		for (int fil = 0; fil < tablero.length; fil++) {

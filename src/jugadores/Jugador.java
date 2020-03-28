@@ -68,6 +68,7 @@ public class Jugador {
 			this.posY++;
 			setIcon("/\\");
 			break;
+		default: 
 		}
 	
 }

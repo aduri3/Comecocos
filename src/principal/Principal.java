@@ -15,7 +15,6 @@ public class Principal {
 		Scanner opc = new Scanner(System.in);
 		int jugadores = 0;
 		boolean corr = true;
-		boolean jugSel = false;
 		Tablero tab = new Tablero(null, jugadores, null, null);
 		int opcion = 0;
 		// Validacion de opciones
@@ -33,7 +32,7 @@ public class Principal {
 		} while ((opcion < 1 || opcion > 4) || !corr);
 		switch (opcion) {
 		case 1:
-			men.menuImplementarJugadores();
+			System.out.println(men.menuImplementarJugadores());
 			break;
 		case 2:
 			tab.jugar();
