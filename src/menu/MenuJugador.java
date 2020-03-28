@@ -16,8 +16,7 @@ public class MenuJugador {
 	/**
 	 * Metodo que devuelve la interfaz de los posibles movimientos del jugador
 	 * 
-	 * @return " -----\n" +" | W |\n" +" -----\n" + "----- ----- -----\n" + "| A | |
-	 *         S | | D |\n" + "----- ----- -----\n"
+	 * @return devuelve la interfaz del jugador
 	 *
 	 */
 	public String getInterfazMovimientos() {
