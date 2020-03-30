@@ -1,12 +1,12 @@
 package tablero;
 
-
 import consumibles.Cereza;
 import consumibles.Consumibles;
 
 import java.util.Scanner;
 
 import consumibles.Bola;
+import consumibles.BolaEspecial;
 import jugadores.Comecoco;
 import jugadores.Jugador;
 import menu.MenuJugador;
@@ -17,7 +17,7 @@ import menu.MenuJugador;
  * Contiene el tablero del juego y sus metodos
  *
  * @version 1.0
- * @author Dani Kuradchyk
+ * @author Dani Kuradchyk , Alfonso Moreno,Roberto Ruiz
  */
 public class Tablero {
 	/**
@@ -31,7 +31,12 @@ public class Tablero {
 	/**
 	 * Valor de bola
 	 **/
+
 	private Consumibles bola = new Bola("· ");
+	/**
+	 * Valor de bola especial
+	 **/
+	private Consumibles bolaesp = new BolaEspecial("O ");
 	/**
 	 * Valor de menu
 	 **/
@@ -65,6 +70,8 @@ public class Tablero {
 		insertarComecocos();
 		insertarParedes();
 		insertarBolas();
+		insertarCereza();
+		insertarBolesp();
 
 		for (int fil = 0; fil < tab.length; fil++) {
 			for (int col = 0; col < tab[fil].length; col++) {
@@ -98,58 +105,58 @@ public class Tablero {
 			tab[i][0] = "X";
 			tab[i][15] = "X";
 			tab[0][i] = "X ";
-			
+
 			tab[2][2] = "X ";
 			tab[2][3] = "X ";
 			tab[2][7] = "X ";
 			tab[1][8] = "X ";
 			tab[2][13] = "X ";
 			tab[2][12] = "X ";
-			
+
 			tab[3][2] = "X ";
 			tab[3][5] = "X ";
 			tab[3][10] = "X ";
 			tab[3][13] = "X ";
-			
+
 			tab[5][5] = "X ";
 			tab[5][7] = "X ";
 			tab[5][8] = "X ";
 			tab[5][10] = "X ";
-			
+
 			tab[6][2] = "X ";
 			tab[6][7] = "X ";
 			tab[6][8] = "X ";
 			tab[6][13] = "X ";
-			
+
 			tab[7][2] = "X ";
 			tab[7][4] = "X ";
 			tab[7][11] = "X ";
 			tab[7][13] = "X ";
-			
+
 			tab[8][2] = "X ";
 			tab[8][4] = "X ";
 			tab[8][11] = "X ";
 			tab[8][13] = "X ";
-			
+
 			tab[9][2] = "X ";
 			tab[9][7] = "X ";
 			tab[9][8] = "X ";
 			tab[9][13] = "X ";
-			
+
 			tab[10][7] = "X ";
 			tab[10][8] = "X ";
-			
+
 			tab[12][2] = "X ";
 			tab[12][5] = "X ";
 			tab[12][10] = "X ";
 			tab[12][13] = "X ";
-			
+
 			tab[13][2] = "X ";
 			tab[13][3] = "X ";
 			tab[13][8] = "X ";
 			tab[13][12] = "X ";
 			tab[13][13] = "X ";
-			
+
 			tab[14][7] = "X ";
 		}
 	}
@@ -189,6 +196,35 @@ public class Tablero {
 	}
 
 	/**
+	 * Metodo que inserta las cerezas dentro del tablero
+	 * 
+	 */
+	private void insertarCereza() {
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
+				tab[11][10] = this.cer.getIcon();
+				tab[3][1] = this.cer.getIcon();
+
+			}
+		}
+	}
+
+	/**
+	 * Metodo que inserta las Bolas especiales dentro del tablero
+	 * 
+	 */
+	private void insertarBolesp() {
+		for (int fil = 0; fil < tab.length; fil++) {
+			for (int col = 0; col < tab[fil].length; col++) {
+				tab[1][1] = this.bolaesp.getIcon();
+				tab[1][14] = this.bolaesp.getIcon();
+				tab[14][1] = this.bolaesp.getIcon();
+				tab[14][14] = this.bolaesp.getIcon();
+			}
+		}
+	}
+
+	/**
 	 * Metodo que inserta a los jugadores dentro del array de jugadores del tablero
 	 * 
 	 * @param j jugador a añadir en el tablero
@@ -200,8 +236,8 @@ public class Tablero {
 	}
 
 	/**
-	 * Metodo que va pidiendo al jugador la posicion a la que se quiere mover hasta que el 
-	 * jugador introduzca salir por consola.
+	 * Metodo que va pidiendo al jugador la posicion a la que se quiere mover hasta
+	 * que el jugador introduzca salir por consola.
 	 */
 	public void jugar() {
 		this.jugadores[0] = new Comecoco("< ", "Dani");

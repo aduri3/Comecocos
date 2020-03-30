@@ -6,6 +6,14 @@ import menu.Menu;
 import tablero.Tablero;
 
 public class Principal {
+	/**
+	 * Clase Principal
+	 *
+	 * Clase en la cual se ejecuta todo el juego
+	 *
+	 * @version 1.0
+	 * @author Dani Kuradchyk
+	 */
 
 	public static void main(String[] args) {
 		
